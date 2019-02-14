@@ -9,7 +9,7 @@ module Prescreen
 
       def decode(json)
         decoded_json = ActiveSupport::JSON.decode(json)
-        decoded_json['data'].presence || decoded_json
+        decoded_json.dig('data') || decoded_json
       end
     end
   end
